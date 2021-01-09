@@ -35,6 +35,12 @@ describe "Romanising" do
         expect(result).to eq("X")
     end
 
+    it "gives a IX when given a 9" do
+        result = roman_numerals("9")
+
+        expect(result).to eq("IX")
+    end
+
 
 end
 
@@ -43,6 +49,7 @@ def roman_numerals(number)
 
     roman_1 = "I"
     roman_5 = "V"
+    roman_10 = "X"
 
     if number.between?(1,3)
         return roman_1 * number
@@ -52,10 +59,13 @@ def roman_numerals(number)
         return roman_5 + roman_1 * (number - 5)
     end
 
-    if number == 10
-        return "X"
+    if number == 9
+        return roman_1 + roman_10
     end
 
-    
+    if number == 10
+        return roman_10
+    end
+
 
 end
