@@ -34,6 +34,7 @@ end
 
 def roman_numerals(number)
     number = number.to_i
+
     roman_1 = "I"
 
     if number <= 3
@@ -43,8 +44,6 @@ def roman_numerals(number)
     return "V" if number == 5
 
     return "VI" if number == 6
-
-    return roman_1 + roman_1 if number == 2
 
     return "V" + (roman_1 * 2) if number == 7
 
