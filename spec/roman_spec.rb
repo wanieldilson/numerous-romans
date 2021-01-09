@@ -36,15 +36,14 @@ def roman_numerals(number)
     number = number.to_i
 
     roman_1 = "I"
+    roman_5 = "V"
 
     if number <= 3
         return roman_1 * number
     end
 
-    return "V" if number == 5
-
-    return "VI" if number == 6
-
-    return "V" + (roman_1 * 2) if number == 7
+    if number >= 5
+        return roman_5 + roman_1 * (number - 5)
+    end
 
 end
